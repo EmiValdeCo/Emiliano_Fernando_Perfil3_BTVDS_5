@@ -4,7 +4,7 @@
     "slug": "Perfil_3",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./src/img/aguacate.jpeg",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./src/img/aguacate.jpeg",
@@ -21,7 +21,7 @@
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./src/img/aguacate.jpeg"
     }
   }
 }
