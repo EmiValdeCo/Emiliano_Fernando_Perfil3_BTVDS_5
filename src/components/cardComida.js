@@ -1,49 +1,59 @@
-import React from 'react';
-import { View, Image, Text, StyleSheet } from 'react-native';
+import React from 'react';  // Importa la biblioteca principal de React
+import { View, Image, Text, StyleSheet, Dimensions } from 'react-native';  // Importa componentes y estilos de React Native
 
+// Definición del componente CardComida
 const CardComida = ({ item }) => {
     return (
+        // Contenedor principal de la tarjeta de comida
         <View style={styles.cardContainer}>
+            {/* Imagen de la comida */}
             <Image source={item.src} style={styles.image} />
+            {/* Título de la comida */}
             <Text style={styles.title}>{item.title}</Text>
-            <View>
-                <Text style={styles.text}>{item.description}</Text>
-            </View>
+            {/* Descripción de la comida */}
+            <Text style={styles.text}>{item.description}</Text>
         </View>
     );
 };
 
+// Obtiene el ancho de la ventana del dispositivo
+const { width } = Dimensions.get('window');
+
+// Estilos para el componente CardComida
 const styles = StyleSheet.create({
     cardContainer: {
-        backgroundColor: '#fff',
-        borderRadius: 8,
-        borderWidth: 1,
-        borderColor: '#ccc',
-        padding: 10,
-        marginBottom: 10,
-        marginHorizontal: 5,
-        shadowColor: '#000',
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-        elevation: 5,
-        alignItems: 'center',
+        width: width * 0.7,  // Ancho de la tarjeta como el 70% del ancho de la ventana
+        backgroundColor: '#fff',  // Color de fondo blanco
+        borderRadius: 10,  // Borde redondeado
+        borderWidth: 1,  // Ancho del borde
+        borderColor: '#ddd',  // Color del borde
+        padding: 15,  // Relleno interno
+        marginBottom: 15,  // Margen inferior
+        alignSelf: 'center',  // Centrado horizontal
+        shadowColor: '#000',  // Color de la sombra
+        shadowOffset: { width: 0, height: 2 },  // Desplazamiento de la sombra
+        shadowOpacity: 0.1,  // Opacidad de la sombra
+        shadowRadius: 8,  // Radio de la sombra
+        elevation: 4,  // Elevación en Android
+        alignItems: 'center',  // Alineación de elementos al centro
     },
     image: {
-        width: 100,
-        height: 100,
-        marginBottom: 10,
+        width: width * 0.6,  // Ancho de la imagen como el 60% del ancho de la ventana
+        height: width * 0.6,  // Altura de la imagen igual al ancho para mantener la proporción
+        borderRadius: 10,  // Borde redondeado
+        marginBottom: 15,  // Margen inferior
     },
     title: {
-        fontSize: 16,
-        fontWeight: 'bold',
+        fontSize: 18,  // Tamaño de fuente del título
+        fontWeight: 'bold',  // Peso de la fuente
+        marginBottom: 8,  // Margen inferior
+        textAlign: 'center',  // Alineación centrada
     },
     text: {
-        fontSize: 10,
+        fontSize: 14,  // Tamaño de fuente del texto
+        color: '#666',  // Color del texto
+        textAlign: 'center',  // Alineación centrada
     },
 });
 
-export default CardComida;
+export default CardComida;  // Exporta el componente CardComida para su uso en otras partes de la aplicación
